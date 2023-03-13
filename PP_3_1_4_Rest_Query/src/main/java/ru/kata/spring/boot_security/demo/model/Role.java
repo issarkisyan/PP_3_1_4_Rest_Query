@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="roles")
@@ -18,19 +19,13 @@ public class Role implements GrantedAuthority {
     private String role;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
-    private Collection<User> users = new HashSet<>();
+    private Set<User> users = new HashSet<>();
     public Role() {
     }
 
     public Role(String role) {
         this.role = role;
     }
-/*
-    public Collection<User> getUsers() {
-        return users;
-    }
-
- */
 
     public Long getId() {
         return id;

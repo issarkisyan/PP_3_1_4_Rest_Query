@@ -47,20 +47,6 @@ public class UserServiceImp implements UserService, UserDetailsService {
         this.userDao.createUser(user);
         return null;
     }
-    @Transactional
-    public Object createRole(Role role) {
-        this.userDao.createRole(role);
-        return null;
-    }
-/*
-    @Transactional
-    public Object addToCommonTable(User user,Role role) {
-        this.userDao.addToCommonTable(user,role);
-        return null;
-    }
-
- */
-
     @Transactional(readOnly = true)
     public List<User> readListUsers() {
         return this.userDao.readListUsers();

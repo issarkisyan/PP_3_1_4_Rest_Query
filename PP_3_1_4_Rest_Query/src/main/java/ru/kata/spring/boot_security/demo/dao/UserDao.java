@@ -11,10 +11,6 @@ import java.util.List;
 public interface UserDao {
     void createUser(User user);
 
-    void createRole(Role role);
-/*
-    void addToCommonTable(User user,Role role);
-*/
     User findByUsername(String username);
 
     List<User> readListUsers();
